@@ -1,8 +1,8 @@
 {
 	"name": "pro-api-sdk",
 	"uuid": "00000000000000000000000000000000",
-	"displayName": "嘉立创EDA 扩展开发工具",
-	"description": "用于开发嘉立创EDA 专业版的扩展",
+	"displayName": "PRO API SDK",
+	"description": "嘉立创EDA & EasyEDA 专业版扩展 API 开发工具",
 	"version": "1.0.0",
 	"publisher": "JLCEDA <support@lceda.cn>",
 	"engines": {
