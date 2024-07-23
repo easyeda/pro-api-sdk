@@ -1,0 +1,45 @@
+{
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"eslint.validate": ["javascript", "typescript"],
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
+	},
+	"prettier.requireConfig": true,
+	"files.associations": {
+		"*.json": "jsonc"
+	},
+	"cSpell.words": [
+		"easyeda",
+		"edaignore",
+		"EDMT",
+		"ELIB",
+		"EPCB",
+		"EPNL",
+		"ESCH",
+		"eslintcache",
+		"ESYS",
+		"IDMT",
+		"iife",
+		"ILIB",
+		"IPCB",
+		"IPNL",
+		"ISCH",
+		"ISYS",
+		"jlceda",
+		"lceda",
+		"nodebuffer",
+		"npmrc",
+		"OSHW",
+		"outdir",
+		"SZJLC",
+		"TDMT",
+		"TLIB",
+		"TPCB",
+		"TPNL",
+		"trivago",
+		"TSCH",
+		"tsdoc",
+		"TSYS"
+	]
+}

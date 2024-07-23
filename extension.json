@@ -1,0 +1,55 @@
+{
+	"name": "pro-api-sdk",
+	"uuid": "00000000000000000000000000000000",
+	"displayName": "嘉立创EDA 扩展开发工具",
+	"description": "用于开发嘉立创EDA 专业版的扩展",
+	"version": "1.0.0",
+	"publisher": "JLCEDA <support@lceda.cn>",
+	"engines": {
+		"eda": "^2.2.20"
+	},
+	"license": "MIT License",
+	"repository": {
+		"type": "extension-store",
+		"url": ""
+	},
+	"categories": "Other",
+	"keywords": ["SDK"],
+	"images": {
+		"logo": "./images/logo.png",
+		"banner": "./images/banner.jpg"
+	},
+	"homepage": "https://pro.lceda.cn",
+	"bugs": "https://lceda.cn/page/feedback?originPage=other",
+	"activationEvents": {},
+	"entry": "./dist/index",
+	"dependentExtensions": {},
+	"headerMenus": {
+		"sch": [
+			{
+				"id": "API SDK",
+				"title": "API SDK",
+				"menuItems": [
+					{
+						"id": "About",
+						"title": "关于...",
+						"registerFn": "about"
+					}
+				]
+			}
+		],
+		"pcb": [
+			{
+				"id": "API SDK",
+				"title": "API SDK",
+				"menuItems": [
+					{
+						"id": "About",
+						"title": "关于...",
+						"registerFn": "about"
+					}
+				]
+			}
+		]
+	}
+}
