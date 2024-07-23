@@ -33,6 +33,6 @@ This development tool set contains all the environments and tools for developing
 
 5. Install the extension package generated under `./build/dist/` in EasyEDA Pro Edition
 
-## 开源许可
+## Open-source License
 
 This development tool uses the [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/) open source license agreement. You can only use the **嘉立创EDA** and **EasyEDA** trademark information for the **function description part** and **open source release title part** of the extension package developed based on this tool.
