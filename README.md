@@ -1,4 +1,4 @@
-[简体中文](#) | [English](./README.en.md)
+[简体中文](#) | [English](./README.en.md) | [繁體中文](./README.zh-Hant.md) | [日本語](./README.ja.md) | [Русский](./README.ru.md)
 
 # pro-api-sdk
 
@@ -13,6 +13,13 @@
 
 1. 克隆 [pro-api-sdk](https://github.com/jlceda/pro-api-sdk) 项目仓库到本地
 
+    Gitee:
+
+    ```shell
+    git clone --depth=1 https://gitee.com/jlceda/pro-api-sdk.git
+    ```
+
+    GitHub:
 
     ```shell
     git clone --depth=1 https://github.com/jlceda/pro-api-sdk.git
