@@ -15,6 +15,6 @@
 /.prettierrc.js
 /package-lock.json
 /package.json
-/README.md
+/README.*.md
 /tsconfig.json
 debug.log
