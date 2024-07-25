@@ -4,6 +4,8 @@
 
 嘉立创EDA & EasyEDA Pro Edition は API 開発ツールを拡張します
 
+![GitHub Repo Stars](https://img.shields.io/github/stars/jlceda/pro-api-sdk) ![GitHub Repo Size](https://img.shields.io/github/repo-size/jlceda/pro-api-sdk) ![GitHub License](https://img.shields.io/github/license/jlceda/pro-api-sdk) ![NPM Version](https://img.shields.io/npm/v/%40jlceda%2Fpro-api-types?label=pro-api-types) ![NPM Downloads](https://img.shields.io/npm/d18m/%40jlceda%2Fpro-api-types)
+
 > [!NOTE]
 > 詳細な開発ドキュメントについては、以下をご覧ください：[https://prodocs.easyeda.com/en/api/guide/](https://prodocs.easyeda.com/en/api/guide/)
 

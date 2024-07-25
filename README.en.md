@@ -4,6 +4,8 @@
 
 JLCEDA & EasyEDA Pro Extension API Development Kit
 
+![GitHub Repo Stars](https://img.shields.io/github/stars/jlceda/pro-api-sdk) ![GitHub Repo Size](https://img.shields.io/github/repo-size/jlceda/pro-api-sdk) ![GitHub License](https://img.shields.io/github/license/jlceda/pro-api-sdk) ![NPM Version](https://img.shields.io/npm/v/%40jlceda%2Fpro-api-types?label=pro-api-types) ![NPM Downloads](https://img.shields.io/npm/d18m/%40jlceda%2Fpro-api-types)
+
 > [!NOTE]
 > For more information on the development of EasyEDA Pro Extension, please visit：[https://prodocs.easyeda.com/en/api/guide/](https://prodocs.easyeda.com/en/api/guide/)
 
