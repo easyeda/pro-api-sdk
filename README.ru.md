@@ -4,7 +4,12 @@
 
 嘉立创EDA & EasyEDA Pro Edition Расширьте возможности инструментов разработки API
 
-![GitHub Repo Stars](https://img.shields.io/github/stars/jlceda/pro-api-sdk) ![GitHub Repo Size](https://img.shields.io/github/repo-size/jlceda/pro-api-sdk) ![GitHub License](https://img.shields.io/github/license/jlceda/pro-api-sdk) ![NPM Version](https://img.shields.io/npm/v/%40jlceda%2Fpro-api-types?label=pro-api-types) ![NPM Downloads](https://img.shields.io/npm/d18m/%40jlceda%2Fpro-api-types)
+[![GitHub Repo Stars](https://img.shields.io/github/stars/jlceda/pro-api-sdk)](https://github.com/jlceda/pro-api-sdk)
+[![GitHub Issues](https://img.shields.io/github/issues/jlceda/pro-api-sdk)](https://github.com/jlceda/pro-api-sdk/issues)
+[![GitHub Repo Size](https://img.shields.io/github/repo-size/jlceda/pro-api-sdk)](https://github.com/jlceda/pro-api-sdk)
+[![GitHub License](https://img.shields.io/github/license/jlceda/pro-api-sdk)](./LICENSE)
+[![NPM Version](https://img.shields.io/npm/v/%40jlceda%2Fpro-api-types?label=pro-api-types)](https://www.npmjs.com/package/@jlceda/pro-api-types)
+[![NPM Downloads](https://img.shields.io/npm/d18m/%40jlceda%2Fpro-api-types)](https://www.npmjs.com/package/@jlceda/pro-api-types)
 
 > [!NOTE]
 > Для получения подробной документации по разработке, пожалуйста, посетите: [https://prodocs.easyeda.com/en/api/guide/](https://prodocs.easyeda.com/en/api/guide/)
