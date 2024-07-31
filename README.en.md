@@ -4,14 +4,15 @@
 
 JLCEDA & EasyEDA Pro Extension API Development Kit
 
-[![GitHub Repo Stars](https://img.shields.io/github/stars/jlceda/pro-api-sdk)](https://github.com/jlceda/pro-api-sdk)
-[![GitHub Issues](https://img.shields.io/github/issues/jlceda/pro-api-sdk)](https://github.com/jlceda/pro-api-sdk/issues)
-[![GitHub Repo Size](https://img.shields.io/github/repo-size/jlceda/pro-api-sdk)](https://github.com/jlceda/pro-api-sdk)
-[![GitHub License](https://img.shields.io/github/license/jlceda/pro-api-sdk)](./LICENSE)
-[![NPM Version](https://img.shields.io/npm/v/%40jlceda%2Fpro-api-types?label=pro-api-types)](https://www.npmjs.com/package/@jlceda/pro-api-types)
-[![NPM Downloads](https://img.shields.io/npm/d18m/%40jlceda%2Fpro-api-types)](https://www.npmjs.com/package/@jlceda/pro-api-types)
+<a href="https://github.com/jlceda/pro-api-sdk" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/github/stars/jlceda/pro-api-sdk" alt="GitHub Repo Stars" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>
+<a href="https://github.com/jlceda/pro-api-sdk/issues" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/github/issues/jlceda/pro-api-sdk" alt="GitHub Issues" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>
+<a href="https://github.com/jlceda/pro-api-sdk" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/github/repo-size/jlceda/pro-api-sdk" alt="GitHub Repo Size" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>
+<a href="https://choosealicense.com/licenses/apache-2.0/" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/github/license/jlceda/pro-api-sdk" alt="GitHub License" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>
+<a href="https://www.npmjs.com/package/@jlceda/pro-api-types" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/npm/v/%40jlceda%2Fpro-api-types?label=pro-api-types" alt="NPM Version" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>
+<a href="https://www.npmjs.com/package/@jlceda/pro-api-types" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/npm/d18m/%40jlceda%2Fpro-api-types" alt="NPM Downloads" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>
 
 > [!NOTE]
+>
 > For more information on the development of EasyEDA Pro Extension, please visit：[https://prodocs.easyeda.com/en/api/guide/](https://prodocs.easyeda.com/en/api/guide/)
 
 ## Enter Development
@@ -41,5 +42,7 @@ This development tool set contains all the environments and tools for developing
 5. Install the extension package generated under `./build/dist/` in EasyEDA Pro Edition
 
 ## Open-source License
+
+<a href="https://choosealicense.com/licenses/apache-2.0/" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/github/license/jlceda/pro-api-sdk" alt="GitHub License" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>
 
 This development tool uses the [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/) open source license agreement. You can only use the **嘉立创EDA** and **EasyEDA** trademark information for the **function description part** and **open source release title part** of the extension package developed based on this tool.

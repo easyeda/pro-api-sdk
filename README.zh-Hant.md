@@ -4,14 +4,15 @@
 
 嘉立创EDA & EasyEDA 专业版扩展 API 开发工具
 
-[![GitHub Repo Stars](https://img.shields.io/github/stars/jlceda/pro-api-sdk)](https://github.com/jlceda/pro-api-sdk)
-[![GitHub Issues](https://img.shields.io/github/issues/jlceda/pro-api-sdk)](https://github.com/jlceda/pro-api-sdk/issues)
-[![GitHub Repo Size](https://img.shields.io/github/repo-size/jlceda/pro-api-sdk)](https://github.com/jlceda/pro-api-sdk)
-[![GitHub License](https://img.shields.io/github/license/jlceda/pro-api-sdk)](./LICENSE)
-[![NPM Version](https://img.shields.io/npm/v/%40jlceda%2Fpro-api-types?label=pro-api-types)](https://www.npmjs.com/package/@jlceda/pro-api-types)
-[![NPM Downloads](https://img.shields.io/npm/d18m/%40jlceda%2Fpro-api-types)](https://www.npmjs.com/package/@jlceda/pro-api-types)
+<a href="https://github.com/jlceda/pro-api-sdk" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/github/stars/jlceda/pro-api-sdk" alt="GitHub Repo Stars" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>
+<a href="https://github.com/jlceda/pro-api-sdk/issues" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/github/issues/jlceda/pro-api-sdk" alt="GitHub Issues" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>
+<a href="https://github.com/jlceda/pro-api-sdk" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/github/repo-size/jlceda/pro-api-sdk" alt="GitHub Repo Size" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>
+<a href="https://choosealicense.com/licenses/apache-2.0/" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/github/license/jlceda/pro-api-sdk" alt="GitHub License" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>
+<a href="https://www.npmjs.com/package/@jlceda/pro-api-types" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/npm/v/%40jlceda%2Fpro-api-types?label=pro-api-types" alt="NPM Version" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>
+<a href="https://www.npmjs.com/package/@jlceda/pro-api-types" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/npm/d18m/%40jlceda%2Fpro-api-types" alt="NPM Downloads" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>
 
 > [!NOTE]
+>
 > 有關 嘉立創EDA專業版 擴展程式開發的更多資訊，請訪問：[https://prodocs.easyeda.com/cn/api/guide/](https://prodocs.easyeda.com/cn/api/guide/)
 
 ## 進入開發
@@ -41,5 +42,7 @@
 5. 在 嘉立創EDA專業版 中安裝生成在 `./build/dist/` 下的擴展程式
 
 ## 開源許可
+
+<a href="https://choosealicense.com/licenses/apache-2.0/" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/github/license/jlceda/pro-api-sdk" alt="GitHub License" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>
 
 本開發工具組使用 [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/) 開源許可協定，你僅可以將 **嘉立创EDA**、**嘉立創EDA**、**EasyEDA** 商標資訊用於依託於本工具組開發的擴展程式的 **功能描述部分** 和 **開源發佈的標題部分**。
