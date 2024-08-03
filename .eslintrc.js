@@ -1,7 +1,7 @@
 module.exports = {
 	plugins: ['eslint-plugin-tsdoc'],
 	extends: ['alloy', 'alloy/typescript'],
-	ignorePatterns: ['/coverage/', '/dist/', '/node_modules/', '/.eslintcache', 'debug.log'],
+	ignorePatterns: ['/build/dist/', '/coverage/', '/dist/', '/node_modules/', '/.eslintcache', 'debug.log'],
 	env: {
 		browser: true,
 		es2017: true,

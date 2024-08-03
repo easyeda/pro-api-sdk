@@ -14,6 +14,9 @@ function multiLineStrToArray(str: string): Array<string> {
 	return str.split(/[\r\n]+/);
 }
 
+/**
+ * 主逻辑方法
+ */
 function main() {
 	const filepathListWithoutFilter = fs.readdirSync(__dirname + '/../', { encoding: 'utf-8', recursive: true });
 	const edaignoreListWithoutResolve = multiLineStrToArray(fs.readFileSync(__dirname + '/../.edaignore', { encoding: 'utf-8' }));
@@ -43,7 +46,7 @@ function main() {
 	}
 
 	zip.generateNodeStream({ type: 'nodebuffer', streamFiles: true }).pipe(
-		fs.createWriteStream(__dirname + '/dist/' + extensionConfig.name + '_v' + extensionConfig.version + '.zip'),
+		fs.createWriteStream(__dirname + '/dist/' + extensionConfig.name + '_v' + extensionConfig.version + '.eext'),
 	);
 }
 
