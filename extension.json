@@ -25,6 +25,19 @@
 	"entry": "./dist/index",
 	"dependentExtensions": {},
 	"headerMenus": {
+		"home": [
+			{
+				"id": "API SDK",
+				"title": "API SDK",
+				"menuItems": [
+					{
+						"id": "About",
+						"title": "关于...",
+						"registerFn": "about"
+					}
+				]
+			}
+		],
 		"sch": [
 			{
 				"id": "API SDK",
