@@ -15,9 +15,46 @@ function multiLineStrToArray(str: string): Array<string> {
 }
 
 /**
+ * 检查 UUID 是否合法
+ *
+ * @param uuid - UUID
+ * @returns 是否合法
+ */
+function testUuid(uuid?: string): uuid is string {
+	const regExp = /^[a-z0-9]{32}$/g;
+	if (uuid && uuid !== '00000000000000000000000000000000') {
+		return regExp.test(uuid.trim());
+	} else {
+		return false;
+	}
+}
+
+/**
+ * 获取正确的 UUID
+ *
+ * @param uuid - UUID
+ * @returns UUID
+ */
+function fixUuid(uuid?: string): string {
+	uuid = uuid?.trim() || undefined;
+	if (testUuid(uuid)) {
+		return uuid.trim();
+	} else {
+		return crypto.randomUUID().replaceAll('-', '');
+	}
+}
+
+/**
  * 主逻辑方法
  */
 function main() {
+	if (!testUuid(extensionConfig.uuid)) {
+		const newExtensionConfig = { ...extensionConfig };
+		// @ts-ignore
+		delete newExtensionConfig.default;
+		newExtensionConfig.uuid = fixUuid(extensionConfig.uuid);
+		fs.writeJsonSync(__dirname + '/../extension.json', newExtensionConfig, { spaces: '\t', EOL: '\n', encoding: 'utf-8' });
+	}
 	const filepathListWithoutFilter = fs.readdirSync(__dirname + '/../', { encoding: 'utf-8', recursive: true });
 	const edaignoreListWithoutResolve = multiLineStrToArray(fs.readFileSync(__dirname + '/../.edaignore', { encoding: 'utf-8' }));
 	const edaignoreList: Array<string> = [];
