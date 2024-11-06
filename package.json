@@ -26,6 +26,7 @@
 		"eslint-plugin-tsdoc": "^0.3.0",
 		"fs-extra": "^11.2.0",
 		"husky": "^9.1.6",
+		"ignore": "^6.0.2",
 		"jszip": "^3.10.1",
 		"lint-staged": "^15.2.10",
 		"prettier": "^3.3.3",

@@ -16,8 +16,7 @@
 	"categories": "Other",
 	"keywords": ["SDK"],
 	"images": {
-		"logo": "./images/logo.png",
-		"banner": "./images/banner.jpg"
+		"logo": "./images/logo.png"
 	},
 	"homepage": "https://pro.lceda.cn",
 	"bugs": "https://lceda.cn/page/feedback?originPage=other",
