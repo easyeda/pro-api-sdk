@@ -14,7 +14,7 @@
 		"build": "npm run compile && ts-node ./build/packaged.ts"
 	},
 	"devDependencies": {
-		"@jlceda/pro-api-types": "^0.1.99",
+		"@jlceda/pro-api-types": "^0.1.100",
 		"@microsoft/tsdoc": "^0.15.0",
 		"@trivago/prettier-plugin-sort-imports": "^4.3.0",
 		"@types/fs-extra": "^11.0.4",
