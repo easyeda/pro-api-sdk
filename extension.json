@@ -8,7 +8,7 @@
 	"engines": {
 		"eda": "^2.2.32"
 	},
-	"license": "MIT License",
+	"license": "Apache-2.0",
 	"repository": {
 		"type": "extension-store",
 		"url": ""
