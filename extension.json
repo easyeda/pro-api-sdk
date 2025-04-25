@@ -3,10 +3,10 @@
 	"uuid": "",
 	"displayName": "PRO API SDK",
 	"description": "嘉立创EDA & EasyEDA 专业版扩展 API 开发工具",
-	"version": "1.1.0",
-	"publisher": "JLCEDA <support@lceda.cn>",
+	"version": "1.0.0",
+	"publisher": "JLCEDA <support[#]lceda.cn>",
 	"engines": {
-		"eda": "^2.3"
+		"eda": "^2.3.0"
 	},
 	"license": "Apache-2.0",
 	"repository": {
