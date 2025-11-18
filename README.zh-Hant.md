@@ -36,6 +36,33 @@
 
 5. 在 嘉立創EDA專業版 中安裝生成在 `./build/dist/` 下的擴展程式
 
+## AI 功能
+
+本擴展集成了雙 AI 引擎（GPT-5.1 + Gemini 2.5 Pro）的 AI 電路設計助手，可以幫助初學者輕鬆設計電子電路。
+
+### 主要功能
+
+- **AI 電路設計器**：透過自然語言描述，自動生成電路設計
+- **雙 AI 引擎**：
+  - GPT-5.1：深度理解使用者需求，生成詳細設計規範
+  - Gemini 2.5 Pro：視覺驗證和優化建議
+- **初學者友好**：提供詳細的說明和安全建議
+- **JLCPCB 集成**：自動使用 JLCPCB 庫存元件
+
+### 使用方法
+
+1. 在選單中選擇 **「API SDK」 > 「AI設定...」**
+2. 輸入您的 OpenAI API 金鑰（用於 GPT-5.1）
+3. 輸入您的 Google Gemini API 金鑰（用於 Gemini 2.5）
+4. 點擊 **「API SDK」 > 「AI電路設計器」** 開始使用
+
+### 所需 API 金鑰
+
+- **OpenAI API Key**：用於 GPT-5.1 模型（需要訪問 GPT-5.1-preview）
+- **Google Gemini API Key**：用於 Gemini 2.5 Pro 模型
+
+有關 AI 集成架構的詳細資訊，請參閱 [AI_INTEGRATION_ARCHITECTURE.md](./docs/AI_INTEGRATION_ARCHITECTURE.md)
+
 ## 開源許可
 
 <a href="https://choosealicense.com/licenses/apache-2.0/" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/github/license/easyeda/pro-api-sdk" alt="GitHub License" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>

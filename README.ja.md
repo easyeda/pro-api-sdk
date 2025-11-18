@@ -36,6 +36,33 @@
 
 5. EasyEDA Pro Edition の `./build/dist/` の下に生成された拡張パッケージをインストールします
 
+## AI 機能
+
+この拡張機能は、デュアル AI エンジン（GPT-5.1 + Gemini 2.5 Pro）を統合した AI 回路設計アシスタントを搭載しており、初心者でも簡単に電子回路を設計できます。
+
+### 主な機能
+
+- **AI 回路デザイナー**：自然言語による説明から、自動的に回路設計を生成
+- **デュアル AI エンジン**：
+  - GPT-5.1：ユーザー要求の深い理解と詳細な設計仕様の生成
+  - Gemini 2.5 Pro：視覚的検証と最適化提案
+- **初心者向け**：詳細な説明と安全に関する推奨事項を提供
+- **JLCPCB 統合**：JLCPCB の在庫部品を自動的に使用
+
+### 使い方
+
+1. メニューから **「API SDK」 > 「AI設定...」** を選択
+2. OpenAI API キーを入力（GPT-5.1 用）
+3. Google Gemini API キーを入力（Gemini 2.5 用）
+4. **「API SDK」 > 「AI回路デザイナー」** をクリックして使用開始
+
+### 必要な API キー
+
+- **OpenAI API キー**：GPT-5.1 モデル用（GPT-5.1-preview へのアクセスが必要）
+- **Google Gemini API キー**：Gemini 2.5 Pro モデル用
+
+AI 統合アーキテクチャの詳細については、[AI_INTEGRATION_ARCHITECTURE.md](./docs/AI_INTEGRATION_ARCHITECTURE.md) をご覧ください
+
 ## オープンソースライセンス
 
 <a href="https://choosealicense.com/licenses/apache-2.0/" style="vertical-align: inherit;" target="_blank"><img src="https://img.shields.io/github/license/easyeda/pro-api-sdk" alt="GitHub License" class="not-medium-zoom-image" style="display: inline; vertical-align: inherit;" /></a>
