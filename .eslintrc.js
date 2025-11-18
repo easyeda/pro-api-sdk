@@ -9,6 +9,13 @@ module.exports = {
 		'no-param-reassign': 'off',
 		'max-params': 'off',
 		'tsdoc/syntax': 'warn',
+		'@typescript-eslint/no-unused-vars': [
+			'error',
+			{
+				argsIgnorePattern: '^_',
+				varsIgnorePattern: '^_',
+			},
+		],
 	},
 	root: true,
 };

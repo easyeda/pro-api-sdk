@@ -29,12 +29,11 @@ export async function activate(status?: 'onStartupFinished', arg?: string): Prom
 				gpt51: {
 					apiKey: gpt51ApiKey,
 					model: 'gpt-5.1-preview' as const,
-					baseURL: 'https://api.openai.com/v1',
+					baseURL: 'https://api.openai.com/v1/chat/completions',
 				},
 				gemini25: {
 					apiKey: geminiApiKey,
-					model: 'gemini-2.5-pro-preview' as const,
-					baseURL: 'https://generativelanguage.googleapis.com/v1',
+					model: 'gemini-2.5-pro' as const,
 				},
 			};
 
@@ -88,12 +87,11 @@ export async function configureAISettings(): Promise<void> {
 				gpt51: {
 					apiKey: gpt51Key,
 					model: 'gpt-5.1-preview' as const,
-					baseURL: 'https://api.openai.com/v1',
+					baseURL: 'https://api.openai.com/v1/chat/completions',
 				},
 				gemini25: {
 					apiKey: geminiKey,
-					model: 'gemini-2.5-pro-preview' as const,
-					baseURL: 'https://generativelanguage.googleapis.com/v1',
+					model: 'gemini-2.5-pro' as const,
 				},
 			};
 
