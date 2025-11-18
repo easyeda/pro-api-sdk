@@ -20,22 +20,22 @@ let orchestrator: AIOrchestrator | null = null;
 export async function activate(status?: 'onStartupFinished', arg?: string): Promise<void> {
 	try {
 		// API キーを設定から取得
-		const gpt51ApiKey = await eda.sys_Setting.get('gpt51_api_key');
-		const geminiApiKey = await eda.sys_Setting.get('gemini_api_key');
+		const gpt51ApiKey = eda.sys_Storage.getExtensionUserConfig('gpt51_api_key');
+		const geminiApiKey = eda.sys_Storage.getExtensionUserConfig('gemini_api_key');
 
 		// 両方のAPIキーが設定されている場合、AIオーケストレーターを初期化
 		if (gpt51ApiKey && geminiApiKey) {
 			const config = {
 				gpt51: {
 					apiKey: gpt51ApiKey,
-					model: "gpt-5.1-preview" as const,
-					baseURL: "https://api.openai.com/v1"
+					model: 'gpt-5.1-preview' as const,
+					baseURL: 'https://api.openai.com/v1',
 				},
 				gemini25: {
 					apiKey: geminiApiKey,
-					model: "gemini-2.5-pro-preview" as const,
-					baseURL: "https://generativelanguage.googleapis.com/v1"
-				}
+					model: 'gemini-2.5-pro-preview' as const,
+					baseURL: 'https://generativelanguage.googleapis.com/v1',
+				},
 			};
 
 			orchestrator = new AIOrchestrator(config);
@@ -61,33 +61,25 @@ export function about(): void {
 export async function configureAISettings(): Promise<void> {
 	try {
 		// OpenAI APIキーの設定
-		const currentGpt51Key = await eda.sys_Setting.get('gpt51_api_key') || '';
-		const gpt51Key = await eda.sys_Dialog.showInputBox(
-			'OpenAI API キーを入力してください (GPT-5.1用)',
-			currentGpt51Key,
-			{
-				placeHolder: 'sk-...',
-				password: true
-			}
-		);
+		const currentGpt51Key = eda.sys_Storage.getExtensionUserConfig('gpt51_api_key') || '';
+		const gpt51Key = await eda.sys_Dialog.showInputBox('OpenAI API キーを入力してください (GPT-5.1用)', currentGpt51Key, {
+			placeHolder: 'sk-...',
+			password: true,
+		});
 
 		if (gpt51Key !== null && gpt51Key !== undefined) {
-			await eda.sys_Setting.set('gpt51_api_key', gpt51Key);
+			await eda.sys_Storage.setExtensionUserConfig('gpt51_api_key', gpt51Key);
 		}
 
 		// Gemini APIキーの設定
-		const currentGeminiKey = await eda.sys_Setting.get('gemini_api_key') || '';
-		const geminiKey = await eda.sys_Dialog.showInputBox(
-			'Google Gemini API キーを入力してください (Gemini 2.5用)',
-			currentGeminiKey,
-			{
-				placeHolder: 'AIza...',
-				password: true
-			}
-		);
+		const currentGeminiKey = eda.sys_Storage.getExtensionUserConfig('gemini_api_key') || '';
+		const geminiKey = await eda.sys_Dialog.showInputBox('Google Gemini API キーを入力してください (Gemini 2.5用)', currentGeminiKey, {
+			placeHolder: 'AIza...',
+			password: true,
+		});
 
 		if (geminiKey !== null && geminiKey !== undefined) {
-			await eda.sys_Setting.set('gemini_api_key', geminiKey);
+			await eda.sys_Storage.setExtensionUserConfig('gemini_api_key', geminiKey);
 		}
 
 		// 両方のキーが設定されている場合、AIオーケストレーターを再初期化
@@ -95,33 +87,24 @@ export async function configureAISettings(): Promise<void> {
 			const config = {
 				gpt51: {
 					apiKey: gpt51Key,
-					model: "gpt-5.1-preview" as const,
-					baseURL: "https://api.openai.com/v1"
+					model: 'gpt-5.1-preview' as const,
+					baseURL: 'https://api.openai.com/v1',
 				},
 				gemini25: {
 					apiKey: geminiKey,
-					model: "gemini-2.5-pro-preview" as const,
-					baseURL: "https://generativelanguage.googleapis.com/v1"
-				}
+					model: 'gemini-2.5-pro-preview' as const,
+					baseURL: 'https://generativelanguage.googleapis.com/v1',
+				},
 			};
 
 			orchestrator = new AIOrchestrator(config);
 
-			eda.sys_Dialog.showInformationMessage(
-				'AI設定が保存され、AIオーケストレーターが初期化されました。',
-				'成功'
-			);
+			eda.sys_Dialog.showInformationMessage('AI設定が保存され、AIオーケストレーターが初期化されました。', '成功');
 		} else {
-			eda.sys_Dialog.showInformationMessage(
-				'API キーが保存されました。両方のキーを設定するとAI機能が有効になります。',
-				'保存完了'
-			);
+			eda.sys_Dialog.showInformationMessage('API キーが保存されました。両方のキーを設定するとAI機能が有効になります。', '保存完了');
 		}
 	} catch (error: any) {
-		eda.sys_Dialog.showInformationMessage(
-			`AI設定の保存中にエラーが発生しました: ${error.message}`,
-			'エラー'
-		);
+		eda.sys_Dialog.showInformationMessage(`AI設定の保存中にエラーが発生しました: ${error.message}`, 'エラー');
 	}
 }
 
@@ -133,7 +116,7 @@ export async function openAICircuitDesigner(): Promise<void> {
 	if (!orchestrator) {
 		const result = await eda.sys_Dialog.showQuestionMessage(
 			'AI機能を使用するには、OpenAI と Gemini の API キーを設定する必要があります。\n\n今すぐ設定しますか?',
-			'AI設定が必要です'
+			'AI設定が必要です',
 		);
 
 		if (result) {
@@ -144,22 +127,13 @@ export async function openAICircuitDesigner(): Promise<void> {
 
 	// iFrameダイアログを開く
 	try {
-		await eda.sys_IFrame.openIFrame(
-			'/iframe/ai-designer.html',
-			1200,
-			800,
-			'ai-designer-main',
-			{
-				maximizeButton: true,
-				minimizeButton: false,
-				grayscaleMask: true
-			}
-		);
+		await eda.sys_IFrame.openIFrame('/iframe/ai-designer.html', 1200, 800, 'ai-designer-main', {
+			maximizeButton: true,
+			minimizeButton: false,
+			grayscaleMask: true,
+		});
 	} catch (error: any) {
-		eda.sys_Dialog.showInformationMessage(
-			`AI回路デザイナーの起動に失敗しました: ${error.message}`,
-			'エラー'
-		);
+		eda.sys_Dialog.showInformationMessage(`AI回路デザイナーの起動に失敗しました: ${error.message}`, 'エラー');
 	}
 }
 
@@ -172,29 +146,35 @@ if (typeof window !== 'undefined') {
 			try {
 				// orchestrator が初期化されているか確認
 				if (!orchestrator) {
-					event.source?.postMessage({
-						type: 'DESIGN_RESPONSE',
-						error: 'AIオーケストレーターが初期化されていません。AI設定を確認してください。'
-					}, event.origin as any);
+					event.source?.postMessage(
+						{
+							type: 'DESIGN_RESPONSE',
+							error: 'AIオーケストレーターが初期化されていません。AI設定を確認してください。',
+						},
+						event.origin as any,
+					);
 					return;
 				}
 
-				const response = await orchestrator.processUserRequest(
-					event.data.input,
-					event.data.context
-				);
+				const response = await orchestrator.processUserRequest(event.data.input, event.data.context);
 
 				// 結果を iFrame に送信
-				event.source?.postMessage({
-					type: 'DESIGN_RESPONSE',
-					response
-				}, event.origin as any);
+				event.source?.postMessage(
+					{
+						type: 'DESIGN_RESPONSE',
+						response,
+					},
+					event.origin as any,
+				);
 			} catch (error: any) {
 				// エラーハンドリング
-				event.source?.postMessage({
-					type: 'DESIGN_RESPONSE',
-					error: `処理中にエラーが発生しました: ${error.message}`
-				}, event.origin as any);
+				event.source?.postMessage(
+					{
+						type: 'DESIGN_RESPONSE',
+						error: `処理中にエラーが発生しました: ${error.message}`,
+					},
+					event.origin as any,
+				);
 			}
 		}
 	});
