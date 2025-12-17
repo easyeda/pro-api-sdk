@@ -12,7 +12,7 @@
  */
 import * as extensionConfig from '../extension.json';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// eslint-disable-next-line unused-imports/no-unused-vars
 export function activate(status?: 'onStartupFinished', arg?: string): void {}
 
 export function about(): void {

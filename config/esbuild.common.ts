@@ -2,7 +2,7 @@ import type esbuild from 'esbuild';
 
 export default {
 	entryPoints: {
-		'index': './src/index',
+		index: './src/index',
 	},
 	entryNames: '[name]',
 	assetNames: '[name]',

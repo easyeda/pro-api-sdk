@@ -6,7 +6,7 @@
 	"version": "1.0.0",
 	"publisher": "JLCEDA <support@lceda.cn>",
 	"engines": {
-		"eda": "^2.3.0"
+		"eda": "^3.0.0"
 	},
 	"license": "Apache-2.0",
 	"repository": {
