@@ -8,7 +8,6 @@ export default antfu({
 	},
 
 	typescript: true,
-	vue: true,
 
-	ignores: ['/build/dist/', '/coverage/', '/dist/', '/node_modules/', '.eslintcache', 'debug.log'],
+	ignores: ['build/dist/', 'coverage/', 'dist/', 'node_modules/', '.eslintcache', 'debug.log'],
 });
