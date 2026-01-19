@@ -12,7 +12,7 @@
 
 ## 開発に入る
 
-この開発ツールセットには、[EasyEDA Pro Edition](https://pro.easyeda.com/) 拡張パッケージを開発するためのすべての環境とツールが含まれており、Prettier と ESLint の推奨ルールが組み込まれています。
+この開発ツールセットには、[EasyEDA Pro Edition](https://pro.easyeda.com/) 拡張パッケージを開発するためのすべての環境とツールが含まれており、ESLint の推奨ルールが組み込まれています。
 
 1. プロジェクト [pro-api-sdk](https://github.com/easyeda/pro-api-sdk) リポジトリをローカル コンピューターにクローンします
 

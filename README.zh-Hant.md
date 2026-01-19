@@ -12,7 +12,7 @@
 
 ## 進入開發
 
-本開發工具組包含了用於開發 [嘉立創EDA專業版](https://pro.easyeda.com/) 擴展程式的所有環境和工具，並內置了 Prettier 和 ESLint 的推薦規則。
+本開發工具組包含了用於開發 [嘉立創EDA專業版](https://pro.easyeda.com/) 擴展程式的所有環境和工具，並內置了 ESLint 的推薦規則。
 
 1. 克隆 [pro-api-sdk](https://github.com/easyeda/pro-api-sdk) 項目倉庫到本地
 

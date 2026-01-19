@@ -12,7 +12,7 @@ JLCEDA & EasyEDA Pro Extension API Development Kit
 
 ## Enter Development
 
-This development tool set contains all the environments and tools for developing the [EasyEDA Pro Edition](https://pro.easyeda.com/) extension package, and has built-in recommended rules for Prettier and ESLint.
+This development tool set contains all the environments and tools for developing the [EasyEDA Pro Edition](https://pro.easyeda.com/) extension package, and has built-in recommended rules for ESLint.
 
 1. Clone the [pro-api-sdk](https://github.com/easyeda/pro-api-sdk) project repository to your local computer
 
