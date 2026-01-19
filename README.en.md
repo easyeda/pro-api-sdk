@@ -8,7 +8,7 @@ JLCEDA & EasyEDA Pro Extension API Development Kit
 
 > [!NOTE]
 >
-> For more information on the development of EasyEDA Pro Extension, please visit：[https://prodocs.easyeda.com/en/api/guide/](https://prodocs.easyeda.com/en/api/guide/)
+> For more information on the development of EasyEDA Pro Extension, please visit: [https://prodocs.easyeda.com/en/api/guide/](https://prodocs.easyeda.com/en/api/guide/)
 
 ## Enter Development
 
