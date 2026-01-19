@@ -14,7 +14,9 @@
 		"url": ""
 	},
 	"categories": "Other",
-	"keywords": ["SDK"],
+	"keywords": [
+		"SDK"
+	],
 	"images": {
 		"logo": "./images/logo.png"
 	},
