@@ -28,6 +28,10 @@
 
 3. いくつかの変更を加えます...
 
+    - フォルダ名をプロジェクト名に変更してください
+    - [開発ガイド](https://prodocs.lceda.cn/en/api/guide/how-to-start.html#ii-extension-configuration) を参照し、`extension.json` 内の `name`、`displayName`、`description`、`publisher` フィールドを変更してください
+    - [拡張機能 API リファレンス](https://prodocs.lceda.cn/en/api/reference/pro-api.html) を参照して、コードを作成してください
+
 4. 拡張機能パッケージをコンパイルする
 
     ```shell

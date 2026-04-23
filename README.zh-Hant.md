@@ -28,6 +28,10 @@
 
 3. 進行些許變更 ...
 
+    - 將資料夾名稱修改為你的擴展程式名稱
+    - 參考 [開發指南](https://prodocs.lceda.cn/en/api/guide/how-to-start.html#ii-extension-configuration) 修改 `extension.json` 中的 `name`、`displayName`、`description`、`publisher` 欄位
+    - 結合 [擴展 API 參考文件](https://prodocs.lceda.cn/en/api/reference/pro-api.html) 撰寫你的程式碼
+
 4. 編譯擴展程式
 
     ```shell

@@ -28,6 +28,10 @@ This development tool set contains all the environments and tools for developing
 
 3. Make your changes ...
 
+    - Rename the folder to your project name
+    - Refer to the [Development Guide](https://prodocs.lceda.cn/en/api/guide/how-to-start.html#ii-extension-configuration) to modify the `name`, `displayName`, `description`, and `publisher` fields in `extension.json`
+    - Write your code using the [Extension API Reference](https://prodocs.lceda.cn/en/api/reference/pro-api.html)
+
 4. Compile the extension package
 
     ```shell
