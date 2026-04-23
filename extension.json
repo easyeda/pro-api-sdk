@@ -1,7 +1,7 @@
 {
 	"name": "your-extension-name",
 	"uuid": "",
-	"displayName": "你的扩展名称",
+	"displayName": "你的扩展名称/Your Extension Name",
 	"description": "",
 	"version": "1.0.0",
 	"publisher": "",
@@ -15,7 +15,7 @@
 	},
 	"categories": "Other",
 	"keywords": [
-		"SDK"
+		"Tool"
 	],
 	"images": {
 		"logo": "./images/logo.png"
@@ -28,8 +28,8 @@
 	"headerMenus": {
 		"home": [
 			{
-				"id": "API SDK",
-				"title": "API SDK",
+				"id": "menuId",
+				"title": "Ext Menu",
 				"menuItems": [
 					{
 						"id": "About",
@@ -41,8 +41,8 @@
 		],
 		"sch": [
 			{
-				"id": "API SDK",
-				"title": "API SDK",
+				"id": "menuId",
+				"title": "Ext Menu",
 				"menuItems": [
 					{
 						"id": "About",
@@ -54,8 +54,8 @@
 		],
 		"pcb": [
 			{
-				"id": "API SDK",
-				"title": "API SDK",
+				"id": "menuId",
+				"title": "Ext Menu",
 				"menuItems": [
 					{
 						"id": "About",
