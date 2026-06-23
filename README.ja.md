@@ -31,6 +31,7 @@
     - フォルダ名をプロジェクト名に変更してください
     - [開発ガイド](https://prodocs.lceda.cn/en/api/guide/how-to-start.html#ii-extension-configuration) を参照し、`extension.json` 内の `name`、`displayName`、`description`、`publisher` フィールドを変更してください
     - [拡張機能 API リファレンス](https://prodocs.lceda.cn/en/api/reference/pro-api.html) を参照して、コードを作成してください
+    - AIプログラミングツールの使用をお勧めし、公式のSKILLと組み合わせることで開発速度を向上させます[easyeda-api-skill](https://github.com/easyeda/easyeda-api-skill)
 
 4. 拡張機能パッケージをコンパイルする
 

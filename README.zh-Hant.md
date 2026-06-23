@@ -31,6 +31,7 @@
     - 將資料夾名稱修改為你的擴展程式名稱
     - 參考 [開發指南](https://prodocs.lceda.cn/en/api/guide/how-to-start.html#ii-extension-configuration) 修改 `extension.json` 中的 `name`、`displayName`、`description`、`publisher` 欄位
     - 結合 [擴展 API 參考文件](https://prodocs.lceda.cn/en/api/reference/pro-api.html) 撰寫你的程式碼
+    - 推薦使用AI編程工具，結合官方SKILL加快開發速度 [easyeda-api-skill](https://github.com/easyeda/easyeda-api-skill)
 
 4. 編譯擴展程式
 

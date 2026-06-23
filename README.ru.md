@@ -31,6 +31,7 @@
     - Измените название папки на название вашего проекта
     - Ознакомьтесь с [Руководством по разработке](https://prodocs.lceda.cn/en/api/guide/how-to-start.html#ii-extension-configuration) и измените поля `name`, `displayName`, `description` и `publisher` в файле `extension.json`
     - Напишите свой код, руководствуясь [справочником по API расширений](https://prodocs.lceda.cn/en/api/reference/pro-api.html)
+    - Рекомендуется использовать инструменты AI-программирования в сочетании с официальным SKILL для ускорения разработки [easyeda-api-skill](https://github.com/easyeda/easyeda-api-skill)
 
 4. Компиляция пакета расширения
 
