@@ -40,9 +40,9 @@
     - 参考 [开发指南](https://prodocs.lceda.cn/cn/api/guide/how-to-start.html#ii-%E6%89%A9%E5%B1%95%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6) 修改 `extension.json` 中的 `name`、`displayName`、`description`、`publisher` 字段
     - 结合 [扩展 API 参考文档](https://prodocs.lceda.cn/cn/api/reference/pro-api.html) 编写你的代码
 
-    > [!NOTE]
-    >
-    > 推荐使用 AI 编程工具，结合官方 SKILL 加快开发进度。详情请查阅：[easyeda-api-skill](https://github.com/easyeda/easyeda-api-skill)
+> [!NOTE]
+>
+> 推荐使用 AI 编程工具，结合官方 SKILL 加快开发进度。详情请查阅：[easyeda-api-skill](https://github.com/easyeda/easyeda-api-skill)
 
 4. 编译扩展包
 

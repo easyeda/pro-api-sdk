@@ -32,9 +32,9 @@ This development tool set contains all the environments and tools for developing
     - Refer to the [Development Guide](https://prodocs.lceda.cn/en/api/guide/how-to-start.html#ii-extension-configuration) to modify the `name`, `displayName`, `description`, and `publisher` fields in `extension.json`
     - Write your code using the [Extension API Reference](https://prodocs.lceda.cn/en/api/reference/pro-api.html)
 
-    > [!NOTE]
-    >
-    > It is recommended to use AI programming tools in conjunction with the official SKILL to accelerate development speed. For more information: [easyeda-api-skill](https://github.com/easyeda/easyeda-api-skill)
+> [!NOTE]
+>
+> It is recommended to use AI programming tools in conjunction with the official SKILL to accelerate development speed. For more information: [easyeda-api-skill](https://github.com/easyeda/easyeda-api-skill)
 
 4. Compile the extension package
 

@@ -32,9 +32,9 @@
     - 參考 [開發指南](https://prodocs.lceda.cn/en/api/guide/how-to-start.html#ii-extension-configuration) 修改 `extension.json` 中的 `name`、`displayName`、`description`、`publisher` 欄位
     - 結合 [擴展 API 參考文件](https://prodocs.lceda.cn/en/api/reference/pro-api.html) 撰寫你的程式碼
 
-    > [!NOTE]
-    >
-    > 推薦使用 AI 編程工具，結合官方 SKILL 加快開發速度：[easyeda-api-skill](https://github.com/easyeda/easyeda-api-skill)
+> [!NOTE]
+>
+> 推薦使用 AI 編程工具，結合官方 SKILL 加快開發速度：[easyeda-api-skill](https://github.com/easyeda/easyeda-api-skill)
 
 4. 編譯擴展程式
 
