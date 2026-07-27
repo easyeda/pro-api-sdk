@@ -1,12 +1,12 @@
 {
 	"name": "your-extension-name",
 	"uuid": "",
-	"displayName": "你的扩展名称/Your Extension Name",
+	"displayName": "填写你的扩展名称 / Your Extension Name",
 	"description": "",
 	"version": "1.0.0",
 	"publisher": "",
 	"engines": {
-		"eda": "^3.0.0"
+		"eda": "^3.2.0"
 	},
 	"license": "Apache-2.0",
 	"repository": {
@@ -28,7 +28,7 @@
 	"headerMenus": {
 		"home": [
 			{
-				"id": "menuId",
+				"id": "menuId1",
 				"title": "Ext Menu",
 				"menuItems": [
 					{
@@ -41,7 +41,7 @@
 		],
 		"sch": [
 			{
-				"id": "menuId",
+				"id": "menuId2",
 				"title": "Ext Menu",
 				"menuItems": [
 					{
@@ -54,7 +54,7 @@
 		],
 		"pcb": [
 			{
-				"id": "menuId",
+				"id": "menuId3",
 				"title": "Ext Menu",
 				"menuItems": [
 					{
