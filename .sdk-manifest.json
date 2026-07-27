@@ -1,13 +1,14 @@
 {
-	"version": "1.5.0",
-	"generatedAt": "2026-07-27T06:28:54.492Z",
+	"version": "1.6.0",
+	"generatedAt": "2026-07-27T08:35:21.902Z",
 	"frameworkFiles": {
-		"build/dev.ts": "03a9ff1cb11655902799a90ba3536de603fe632f06a2d24a6f6f40976b8acefb",
-		"build/manifest.ts": "18d6a6d07c5f1180688e9f8037e7203b08cf2bdee92ad2bff15af86deb53c2ef",
-		"build/packaged.ts": "9abcc202089396dee16a51f84938dc8c890a7637c1c72d26ae268a22baabc22f",
-		"build/update.ts": "98bb491c4c7f107baacaa4a3dcc56ab2da219dd78d4379e2ec227634fd06a16e",
+		"build/create.js": "024d9754bf9cc48c55021e98c30f2365a2339e9145f1dec4e114d8718b3cc508",
+		"build/dev.ts": "a9f6ff3da70ee17af9703a04c4986a43bf93a31c45a41faaa09dce8836bc345b",
+		"build/manifest.ts": "820677f400f617f3e87ec53e0bc6e933578d071da0a42f2091bba11116b615c4",
+		"build/packaged.ts": "c28f6dd4c7b777cd8e1bc83edcb640b3903a980cb8476b1961ffd724cf7d27ce",
+		"build/update.ts": "6acf631f57c07ba58772aa4d24300f1ede775156770c7c418ed107408fdc584b",
 		"build/utils.ts": "2b6a3b52b0b2b0381fac0b9b68ce00ff05643753c76c4a157304b3009e76beb7",
 		"config/esbuild.common.ts": "7852b30c09482327a4dbc594a13853c15c26f7fe97cd4ed781d503c605d27075",
-		"config/esbuild.prod.ts": "fd61b28cef5c3d3bd61be91f27724d778476d3af833119d49f989fc7c04eee5d"
+		"config/esbuild.prod.ts": "89f6dab4af6cd2c22efe8c9afb6d41bd0624cc48cfef29e893b52f724043c801"
 	}
 }

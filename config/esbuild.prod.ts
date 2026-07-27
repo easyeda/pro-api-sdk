@@ -1,7 +1,7 @@
 import process from 'node:process';
 import esbuild from 'esbuild';
 
-import common from './esbuild.common';
+import common from './esbuild.common.ts';
 
 (async () => {
 	const ctx = await esbuild.context(common);

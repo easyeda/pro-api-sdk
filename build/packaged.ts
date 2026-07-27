@@ -1,9 +1,14 @@
 import path from 'node:path';
 import process from 'node:process';
+import { fileURLToPath } from 'node:url';
 import fs from 'fs-extra';
 
-import * as extensionConfig from '../extension.json';
-import { fixUuid, packageExtension, testUuid } from './utils';
+import extensionConfig from '../extension.json' with { type: 'json' };
+
+import { fixUuid, packageExtension, testUuid } from './utils.ts';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 /**
  * 主逻辑方法
@@ -18,12 +23,14 @@ function main() {
 	}
 
 	const rootDir = path.join(__dirname, '../');
-	const outputPath = path.join(__dirname, 'dist', `${extensionConfig.name}_v${extensionConfig.version}.eext`);
+	const extensionName = extensionConfig.name ?? 'extension';
+	const extensionVersion = extensionConfig.version ?? '1.0.0';
+	const outputPath = path.join(__dirname, 'dist', `${extensionName}_v${extensionVersion}.eext`);
 
 	packageExtension(rootDir, outputPath).then(() => {
-		console.log(`打包完成: ${outputPath}`);
+		console.log(`Packaging complete: ${outputPath}`);
 	}).catch((err) => {
-		console.error('打包失败:', err);
+		console.error('Packaging failed:', err);
 		process.exit(1);
 	});
 }

@@ -1,7 +1,11 @@
 import crypto from 'node:crypto';
 import path from 'node:path';
 import process from 'node:process';
+import { fileURLToPath } from 'node:url';
 import fs from 'fs-extra';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 /**
  * 计算文件 SHA256 哈希
@@ -76,7 +80,7 @@ function main() {
 		const manifest = generateManifest();
 		const manifestPath = path.join(__dirname, '../.sdk-manifest.json');
 		fs.writeJsonSync(manifestPath, manifest, { spaces: '\t', EOL: '\n' });
-		console.log(`已生成 .sdk-manifest.json (版本：${manifest.version})`);
+		console.log(`Generated .sdk-manifest.json (version: ${manifest.version})`);
 	}
 	else if (command === 'bump') {
 		// 提升版本号
@@ -89,18 +93,18 @@ function main() {
 		packageJson.version = versionParts.join('.');
 
 		fs.writeJsonSync(packageJsonPath, packageJson, { spaces: '\t', EOL: '\n' });
-		console.log(`版本号已提升：${packageJson.version}`);
+		console.log(`Version bumped: ${packageJson.version}`);
 
 		// 重新生成 manifest
 		const manifest = generateManifest();
 		const manifestPath = path.join(__dirname, '../.sdk-manifest.json');
 		fs.writeJsonSync(manifestPath, manifest, { spaces: '\t', EOL: '\n' });
-		console.log(`已生成 .sdk-manifest.json (版本: ${manifest.version})`);
+		console.log(`Generated .sdk-manifest.json (version: ${manifest.version})`);
 	}
 	else {
-		console.log('用法：');
-		console.log('  npm run manifest:generate  - 生成 manifest');
-		console.log('  npm run manifest:bump      - 提升版本号并生成 manifest');
+		console.log('Usage:');
+		console.log('  npm run manifest:generate  - Generate manifest');
+		console.log('  npm run manifest:bump      - Bump version and generate manifest');
 	}
 }
 

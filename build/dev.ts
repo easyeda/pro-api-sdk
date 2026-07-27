@@ -1,12 +1,17 @@
 import path from 'node:path';
 import process from 'node:process';
+import { fileURLToPath } from 'node:url';
 import esbuild from 'esbuild';
 import fs from 'fs-extra';
 import { WebSocketServer } from 'ws';
 
-import common from '../config/esbuild.common';
-import rawExtensionConfig from '../extension.json';
-import { fixUuid, packageExtension, testUuid } from './utils';
+import common from '../config/esbuild.common.ts';
+import rawExtensionConfig from '../extension.json' with { type: 'json' };
+
+import { fixUuid, packageExtension, testUuid } from './utils.ts';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const WEBSOCKET_PORT = 59394;
 const DIST_DIR = path.join(__dirname, '../dist');
@@ -19,7 +24,7 @@ function resolveExtensionConfig() {
 		delete extensionConfig.default;
 		extensionConfig.uuid = fixUuid(extensionConfig.uuid as string | undefined);
 		fs.writeJsonSync(path.join(__dirname, '../extension.json'), extensionConfig, { spaces: '\t', EOL: '\n', encoding: 'utf-8' });
-		console.log('[Dev Mode] 已修复 extension.json 中的 UUID');
+		console.log('[Dev Mode] Fixed UUID in extension.json');
 	}
 	return extensionConfig;
 }
@@ -45,7 +50,7 @@ async function broadcastEext(wss: WebSocketServer): Promise<void> {
 		base64Content = await getEextBase64();
 	}
 	catch (err) {
-		console.error('[Dev Mode] 读取 eext 文件失败:', err);
+		console.error('[Dev Mode] Failed to read eext file:', err);
 		return;
 	}
 
@@ -64,7 +69,7 @@ async function broadcastEext(wss: WebSocketServer): Promise<void> {
 			clientCount++;
 		}
 	});
-	console.log(`[Dev Mode] 已向 ${clientCount} 个客户端推送更新: ${EEXT_FILENAME}`);
+	console.log(`[Dev Mode] Pushed update to ${clientCount} client(s): ${EEXT_FILENAME}`);
 }
 
 /**
@@ -76,10 +81,10 @@ async function main() {
 
 	// 启动 WebSocket 服务器
 	const wss = new WebSocketServer({ port: WEBSOCKET_PORT });
-	console.log(`[Dev Mode] WebSocket 服务器已启动: ws://localhost:${WEBSOCKET_PORT}`);
+	console.log(`[Dev Mode] WebSocket server started: ws://localhost:${WEBSOCKET_PORT}`);
 
 	wss.on('connection', async (ws) => {
-		console.log('[Dev Mode] 新客户端已连接');
+		console.log('[Dev Mode] New client connected');
 
 		// 客户端首次连接时，发送当前最新的 eext 文件
 		try {
@@ -92,14 +97,14 @@ async function main() {
 				fileMimeType: 'application/octet-stream',
 			});
 			ws.send(message);
-			console.log(`[Dev Mode] 已向新客户端发送当前版本: ${EEXT_FILENAME}`);
+			console.log(`[Dev Mode] Sent current version to new client: ${EEXT_FILENAME}`);
 		}
 		catch (err) {
-			console.error('[Dev Mode] 发送初始 eext 失败:', err);
+			console.error('[Dev Mode] Failed to send initial eext:', err);
 		}
 
 		ws.on('close', () => {
-			console.log('[Dev Mode] 客户端已断开');
+			console.log('[Dev Mode] Client disconnected');
 		});
 	});
 
@@ -115,14 +120,14 @@ async function main() {
 						clearTimeout(buildTimeout);
 					}
 					buildTimeout = setTimeout(async () => {
-						console.log('[Dev Mode] 检测到更改，重新打包...');
+						console.log('[Dev Mode] Change detected, repackaging...');
 						try {
 							await packageExtension(ROOT_DIR, EEXT_PATH);
-							console.log('[Dev Mode] 重新打包完成');
+							console.log('[Dev Mode] Repackaging complete');
 							await broadcastEext(wss);
 						}
 						catch (err) {
-							console.error('[Dev Mode] 重新打包失败:', err);
+							console.error('[Dev Mode] Repackaging failed:', err);
 						}
 					}, 300);
 				}
@@ -137,19 +142,19 @@ async function main() {
 	});
 
 	// 初始构建
-	console.log('[Dev Mode] 开始初始构建...');
+	console.log('[Dev Mode] Starting initial build...');
 	await ctx.rebuild();
-	console.log('[Dev Mode] 初始构建完成');
+	console.log('[Dev Mode] Initial build complete');
 
 	// 初始打包
-	console.log('[Dev Mode] 开始打包扩展...');
+	console.log('[Dev Mode] Starting to package extension...');
 	await packageExtension(ROOT_DIR, EEXT_PATH);
 	// 启动文件监听
 	await ctx.watch();
-	console.log('[Dev Mode] 已启动文件监听，等待更改...');
+	console.log('[Dev Mode] File watcher started, waiting for changes...');
 }
 
 main().catch((err) => {
-	console.error('[Dev Mode] 发生错误:', err);
+	console.error('[Dev Mode] Error occurred:', err);
 	process.exit(1);
 });

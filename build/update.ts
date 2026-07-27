@@ -1,6 +1,10 @@
 import path from 'node:path';
 import process from 'node:process';
+import { fileURLToPath } from 'node:url';
 import fs from 'fs-extra';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const GITHUB_OWNER = 'easyeda';
 const GITHUB_REPO = 'pro-api-sdk';
@@ -65,21 +69,21 @@ async function getRemoteManifest(): Promise<{ version: string; frameworkFiles: s
 	let manifest = await fetchJson<{ version: string; frameworkFiles: string[] }>(githubUrl);
 
 	if (manifest) {
-		console.log('[GitHub] 获取 manifest 成功');
+		console.log('[GitHub] Manifest fetched successfully');
 		return manifest;
 	}
 
 	// GitHub 失败，回退到 Gitee
-	console.log('[GitHub] 获取 manifest 失败，尝试 Gitee...');
+	console.log('[GitHub] Failed to fetch manifest, trying Gitee...');
 	const giteeUrl = `${GITEE_BASE_URL}/.sdk-manifest.json`;
 	manifest = await fetchJson<{ version: string; frameworkFiles: string[] }>(giteeUrl);
 
 	if (manifest) {
-		console.log('[Gitee] 获取 manifest 成功');
+		console.log('[Gitee] Manifest fetched successfully');
 		return manifest;
 	}
 
-	console.error('无法从 GitHub 或 Gitee 获取远程 manifest');
+	console.error('Failed to fetch remote manifest from GitHub or Gitee');
 	return null;
 }
 
@@ -128,19 +132,19 @@ async function downloadFile(filePath: string): Promise<boolean> {
 	let content = await fetchText(githubUrl);
 
 	if (content !== null) {
-		console.log(`[GitHub] 下载成功：${filePath}`);
+		console.log(`[GitHub] Downloaded: ${filePath}`);
 	}
 	else {
 		// GitHub 失败，回退到 Gitee
-		console.log(`[GitHub] 下载失败，尝试 Gitee：${filePath}`);
+		console.log(`[GitHub] Download failed, trying Gitee: ${filePath}`);
 		const giteeUrl = `${GITEE_BASE_URL}/${filePath}`;
 		content = await fetchText(giteeUrl);
 
 		if (content !== null) {
-			console.log(`[Gitee] 下载成功：${filePath}`);
+			console.log(`[Gitee] Downloaded: ${filePath}`);
 		}
 		else {
-			console.error(`下载失败：${filePath}`);
+			console.error(`Download failed: ${filePath}`);
 			return false;
 		}
 	}
@@ -159,7 +163,7 @@ async function checkUpdate(): Promise<{ hasUpdate: boolean; localVersion: string
 	const remoteManifest = await getRemoteManifest();
 
 	if (!remoteManifest) {
-		console.log('无法获取远程 manifest');
+		console.log('Unable to fetch remote manifest');
 		return { hasUpdate: false, localVersion: localManifest?.version ?? null, remoteVersion: null };
 	}
 
@@ -167,16 +171,16 @@ async function checkUpdate(): Promise<{ hasUpdate: boolean; localVersion: string
 	const remoteVersion = remoteManifest.version;
 
 	if (!localVersion) {
-		console.log(`发现新版本：${remoteVersion}`);
+		console.log(`New version found: ${remoteVersion}`);
 		return { hasUpdate: true, localVersion: null, remoteVersion };
 	}
 
 	if (localVersion === remoteVersion) {
-		console.log(`已是最新版本：${localVersion}`);
+		console.log(`Already up to date: ${localVersion}`);
 		return { hasUpdate: false, localVersion, remoteVersion };
 	}
 
-	console.log(`发现新版本：${localVersion} → ${remoteVersion}`);
+	console.log(`New version found: ${localVersion} → ${remoteVersion}`);
 	return { hasUpdate: true, localVersion, remoteVersion };
 }
 
@@ -188,23 +192,23 @@ async function performUpdate() {
 	const remoteManifest = await getRemoteManifest();
 
 	if (!remoteManifest) {
-		console.error('无法获取远程 manifest，更新失败');
+		console.error('Failed to fetch remote manifest, update failed');
 		return false;
 	}
 
 	// 检查是否有更新
 	if (localManifest && localManifest.version === remoteManifest.version) {
-		console.log(`已是最新版本：${localManifest.version}`);
+		console.log(`Already up to date: ${localManifest.version}`);
 		return true;
 	}
 
-	console.log(`开始更新：${localManifest?.version ?? 'unknown'} → ${remoteManifest.version}`);
+	console.log(`Starting update: ${localManifest?.version ?? 'unknown'} → ${remoteManifest.version}`);
 
 	// 备份 package.json
 	const packageJsonPath = path.join(__dirname, '../package.json');
 	const packageJsonBackupPath = path.join(__dirname, '../package.json.backup');
 	fs.copySync(packageJsonPath, packageJsonBackupPath);
-	console.log('已备份 package.json → package.json.backup');
+	console.log('Backed up package.json → package.json.backup');
 
 	// 智能合并 package.json
 	const localPackageJson = fs.readJsonSync(packageJsonPath);
@@ -212,33 +216,33 @@ async function performUpdate() {
 	// 先尝试 GitHub 获取 package.json
 	let remotePackageJson = await fetchJson<any>(`${GITHUB_BASE_URL}/package.json`);
 	if (!remotePackageJson) {
-		console.log('[GitHub] 获取 package.json 失败，尝试 Gitee...');
+		console.log('[GitHub] Failed to fetch package.json, trying Gitee...');
 		remotePackageJson = await fetchJson<any>(`${GITEE_BASE_URL}/package.json`);
 	}
 
 	if (!remotePackageJson) {
-		console.error('无法获取远程 package.json');
+		console.error('Failed to fetch remote package.json');
 		return false;
 	}
 
 	const mergedPackageJson = mergePackageJson(localPackageJson, remotePackageJson);
 	fs.writeJsonSync(packageJsonPath, mergedPackageJson, { spaces: '\t', EOL: '\n' });
-	console.log('已合并 package.json');
+	console.log('Merged package.json');
 
 	// 下载框架文件
 	const frameworkFiles = remoteManifest.frameworkFiles ?? [];
 	for (const file of frameworkFiles) {
 		const success = await downloadFile(file);
 		if (success) {
-			console.log(`已更新：${file}`);
+			console.log(`Updated: ${file}`);
 		}
 	}
 
 	// 更新 manifest
 	fs.writeJsonSync(path.join(__dirname, '../.sdk-manifest.json'), remoteManifest, { spaces: '\t', EOL: '\n' });
-	console.log('已更新 .sdk-manifest.json');
+	console.log('Updated .sdk-manifest.json');
 
-	console.log('更新完成！');
+	console.log('Update complete!');
 	return true;
 }
 
@@ -256,13 +260,13 @@ async function main() {
 		await performUpdate();
 	}
 	else {
-		console.log('用法：');
-		console.log('  npm run update:check  - 检查更新');
-		console.log('  npm run update        - 执行更新');
+		console.log('Usage:');
+		console.log('  npm run update:check  - Check for updates');
+		console.log('  npm run update        - Perform update');
 	}
 }
 
 main().catch((err) => {
-	console.error('发生错误：', err);
+	console.error('Error occurred:', err);
 	process.exit(1);
 });
