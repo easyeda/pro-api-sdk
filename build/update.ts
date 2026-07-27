@@ -128,19 +128,19 @@ async function downloadFile(filePath: string): Promise<boolean> {
 	let content = await fetchText(githubUrl);
 
 	if (content !== null) {
-		console.log(`[GitHub] 下载成功: ${filePath}`);
+		console.log(`[GitHub] 下载成功：${filePath}`);
 	}
 	else {
 		// GitHub 失败，回退到 Gitee
-		console.log(`[GitHub] 下载失败，尝试 Gitee: ${filePath}`);
+		console.log(`[GitHub] 下载失败，尝试 Gitee：${filePath}`);
 		const giteeUrl = `${GITEE_BASE_URL}/${filePath}`;
 		content = await fetchText(giteeUrl);
 
 		if (content !== null) {
-			console.log(`[Gitee] 下载成功: ${filePath}`);
+			console.log(`[Gitee] 下载成功：${filePath}`);
 		}
 		else {
-			console.error(`下载失败: ${filePath}`);
+			console.error(`下载失败：${filePath}`);
 			return false;
 		}
 	}
@@ -167,16 +167,16 @@ async function checkUpdate(): Promise<{ hasUpdate: boolean; localVersion: string
 	const remoteVersion = remoteManifest.version;
 
 	if (!localVersion) {
-		console.log(`发现新版本: ${remoteVersion}`);
+		console.log(`发现新版本：${remoteVersion}`);
 		return { hasUpdate: true, localVersion: null, remoteVersion };
 	}
 
 	if (localVersion === remoteVersion) {
-		console.log(`已是最新版本: ${localVersion}`);
+		console.log(`已是最新版本：${localVersion}`);
 		return { hasUpdate: false, localVersion, remoteVersion };
 	}
 
-	console.log(`发现新版本: ${localVersion} → ${remoteVersion}`);
+	console.log(`发现新版本：${localVersion} → ${remoteVersion}`);
 	return { hasUpdate: true, localVersion, remoteVersion };
 }
 
@@ -194,11 +194,11 @@ async function performUpdate() {
 
 	// 检查是否有更新
 	if (localManifest && localManifest.version === remoteManifest.version) {
-		console.log(`已是最新版本: ${localManifest.version}`);
+		console.log(`已是最新版本：${localManifest.version}`);
 		return true;
 	}
 
-	console.log(`开始更新: ${localManifest?.version ?? 'unknown'} → ${remoteManifest.version}`);
+	console.log(`开始更新：${localManifest?.version ?? 'unknown'} → ${remoteManifest.version}`);
 
 	// 备份 package.json
 	const packageJsonPath = path.join(__dirname, '../package.json');
@@ -230,7 +230,7 @@ async function performUpdate() {
 	for (const file of frameworkFiles) {
 		const success = await downloadFile(file);
 		if (success) {
-			console.log(`已更新: ${file}`);
+			console.log(`已更新：${file}`);
 		}
 	}
 
@@ -238,7 +238,7 @@ async function performUpdate() {
 	fs.writeJsonSync(path.join(__dirname, '../.sdk-manifest.json'), remoteManifest, { spaces: '\t', EOL: '\n' });
 	console.log('已更新 .sdk-manifest.json');
 
-	console.log('更新完成！请运行 npm install 安装依赖');
+	console.log('更新完成！');
 	return true;
 }
 
@@ -256,13 +256,13 @@ async function main() {
 		await performUpdate();
 	}
 	else {
-		console.log('用法:');
+		console.log('用法：');
 		console.log('  npm run update:check  - 检查更新');
 		console.log('  npm run update        - 执行更新');
 	}
 }
 
 main().catch((err) => {
-	console.error('发生错误:', err);
+	console.error('发生错误：', err);
 	process.exit(1);
 });
