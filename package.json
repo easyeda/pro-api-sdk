@@ -1,7 +1,7 @@
 {
 	"name": "pro-api-sdk",
 	"type": "module",
-	"version": "1.6.1",
+	"version": "1.6.2",
 	"description": "JLCEDA & EasyEDA Professional Extension API Development Toolkit",
 	"author": "JLCEDA <support@lceda.cn>",
 	"license": "Apache-2.0",
@@ -21,7 +21,7 @@
 		"update:check": "ts-node ./build/update.ts check",
 		"update": "ts-node ./build/update.ts update && npm install",
 		"manifest:generate": "npm install && ts-node ./build/manifest.ts generate",
-		"manifest:bump": "npm install && ts-node ./build/manifest.ts bump"
+		"manifest:bump": "npm install && ts-node ./build/manifest.ts bump && npm install"
 	},
 	"devDependencies": {
 		"@antfu/eslint-config": "^5.4.1",

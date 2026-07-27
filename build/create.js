@@ -59,13 +59,16 @@ function removeDirRecursive(dir) {
 
 /**
  * 递归删除匹配的文件/目录
+ *
+ * @param dir - 当前处理的目录
+ * @param rootDir - 根目录（用于计算相对路径）
  */
-function removeExcludedFiles(dir) {
+function removeExcludedFiles(dir, rootDir = dir) {
 	const entries = fs.readdirSync(dir, { withFileTypes: true });
 
 	for (const entry of entries) {
 		const fullPath = path.join(dir, entry.name);
-		const relativePath = path.relative(dir, entry.name);
+		const relativePath = path.relative(rootDir, fullPath);
 
 		// 检查是否匹配排除模式
 		const shouldExclude = EXCLUDE_PATTERNS.some((pattern) => {
@@ -78,7 +81,7 @@ function removeExcludedFiles(dir) {
 		}
 
 		if (entry.isDirectory()) {
-			removeExcludedFiles(fullPath);
+			removeExcludedFiles(fullPath, rootDir);
 			// 删除空目录
 			if (isDirEmpty(fullPath)) {
 				fs.rmdirSync(fullPath);
@@ -148,10 +151,10 @@ function main() {
 		console.log('Next steps:');
 		console.log(`  cd ${projectName}`);
 		console.log('  npm install');
-		console.log('  npm run debug');
+		console.log('  npm run build');
 	}
 	catch (err) {
-		console.error('创建项目失败：', err);
+		console.error('Failed to create project:', err);
 		// 清理临时目录
 		if (fs.existsSync(tempDir)) {
 			removeDirRecursive(tempDir);
