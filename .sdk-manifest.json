@@ -1,10 +1,8 @@
 {
-	"version": "1.6.0",
-	"generatedAt": "2026-07-27T08:35:21.902Z",
+	"version": "1.6.1",
+	"generatedAt": "2026-07-27T08:47:02.763Z",
 	"frameworkFiles": {
-		"build/create.js": "024d9754bf9cc48c55021e98c30f2365a2339e9145f1dec4e114d8718b3cc508",
 		"build/dev.ts": "a9f6ff3da70ee17af9703a04c4986a43bf93a31c45a41faaa09dce8836bc345b",
-		"build/manifest.ts": "820677f400f617f3e87ec53e0bc6e933578d071da0a42f2091bba11116b615c4",
 		"build/packaged.ts": "c28f6dd4c7b777cd8e1bc83edcb640b3903a980cb8476b1961ffd724cf7d27ce",
 		"build/update.ts": "6acf631f57c07ba58772aa4d24300f1ede775156770c7c418ed107408fdc584b",
 		"build/utils.ts": "2b6a3b52b0b2b0381fac0b9b68ce00ff05643753c76c4a157304b3009e76beb7",

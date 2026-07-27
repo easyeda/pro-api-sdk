@@ -14,6 +14,8 @@ const GITHUB_URL = `https://github.com/${GITHUB_REPO}.git`;
 const EXCLUDE_PATTERNS = [
 	'.git',
 	'.sdk-manifest.json',
+	'build/create.js',
+	'build/manifest.ts',
 	'CHANGELOG.md',
 	'README.md',
 	'README.en.md',

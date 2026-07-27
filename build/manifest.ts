@@ -48,8 +48,8 @@ function generateManifest() {
 	const buildDir = path.join(rootDir, 'build');
 	const configDir = path.join(rootDir, 'config');
 
-	// 获取框架文件列表（排除 build/dist 目录）
-	const buildFiles = getFilesRecursively(buildDir, rootDir).filter(file => !file.startsWith('build/dist/'));
+	// 获取框架文件列表（排除 build/dist 目录、create.js 和 manifest.ts）
+	const buildFiles = getFilesRecursively(buildDir, rootDir).filter(file => !file.startsWith('build/dist/') && file !== 'build/create.js' && file !== 'build/manifest.ts');
 	const configFiles = getFilesRecursively(configDir, rootDir);
 	const frameworkFiles = [...buildFiles, ...configFiles];
 
