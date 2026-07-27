@@ -38,23 +38,25 @@ function isDirEmpty(dir) {
 }
 
 /**
- * 递归删除目录
+ * 递归删除目录或文件
+ *
+ * @param targetPath - 要删除的路径
  */
-function removeDirRecursive(dir) {
-	if (!fs.existsSync(dir)) {
+function removeDirRecursive(targetPath) {
+	if (!fs.existsSync(targetPath)) {
 		return;
 	}
-	const entries = fs.readdirSync(dir, { withFileTypes: true });
-	for (const entry of entries) {
-		const fullPath = path.join(dir, entry.name);
-		if (entry.isDirectory()) {
-			removeDirRecursive(fullPath);
+	const stat = fs.statSync(targetPath);
+	if (stat.isDirectory()) {
+		const entries = fs.readdirSync(targetPath, { withFileTypes: true });
+		for (const entry of entries) {
+			removeDirRecursive(path.join(targetPath, entry.name));
 		}
-		else {
-			fs.unlinkSync(fullPath);
-		}
+		fs.rmdirSync(targetPath);
 	}
-	fs.rmdirSync(dir);
+	else {
+		fs.unlinkSync(targetPath);
+	}
 }
 
 /**
