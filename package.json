@@ -17,7 +17,7 @@
 	},
 	"devDependencies": {
 		"@antfu/eslint-config": "^5.4.1",
-		"@jlceda/pro-api-types": "^0.3.10",
+		"@jlceda/pro-api-types": "^0.3.11",
 		"@types/fs-extra": "^11.0.4",
 		"@types/ws": "^8.5.13",
 		"esbuild": "^0.24.2",
