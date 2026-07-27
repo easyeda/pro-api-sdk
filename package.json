@@ -16,8 +16,8 @@
 		"debug": "ts-node ./build/dev.ts",
 		"update:check": "ts-node ./build/update.ts check",
 		"update": "ts-node ./build/update.ts update && npm install",
-		"manifest:generate": "ts-node ./build/manifest.ts generate",
-		"manifest:bump": "ts-node ./build/manifest.ts bump"
+		"manifest:generate": "npm install && ts-node ./build/manifest.ts generate",
+		"manifest:bump": "npm install && ts-node ./build/manifest.ts bump"
 	},
 	"devDependencies": {
 		"@antfu/eslint-config": "^5.4.1",
