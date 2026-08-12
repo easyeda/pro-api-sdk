@@ -1,7 +1,7 @@
 {
 	"name": "pro-api-sdk",
 	"type": "module",
-	"version": "1.6.7",
+	"version": "1.6.8",
 	"description": "JLCEDA & EasyEDA Professional Extension API Development Toolkit",
 	"author": "JLCEDA <support@lceda.cn>",
 	"license": "Apache-2.0",
