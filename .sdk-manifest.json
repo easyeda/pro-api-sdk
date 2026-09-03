@@ -1,6 +1,6 @@
 {
-	"version": "1.6.20",
-	"generatedAt": "2026-09-02T01:54:37.602Z",
+	"version": "1.6.21",
+	"generatedAt": "2026-09-03T08:34:13.483Z",
 	"frameworkFiles": {
 		"build/dev.ts": "a9f6ff3da70ee17af9703a04c4986a43bf93a31c45a41faaa09dce8836bc345b",
 		"build/packaged.ts": "c28f6dd4c7b777cd8e1bc83edcb640b3903a980cb8476b1961ffd724cf7d27ce",
